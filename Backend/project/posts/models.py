@@ -10,7 +10,7 @@ class Post(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория', related_name='posts')
 
     def __str__(self):
-        return f'Пост :{self.title}'
+        return f'Пост : {self.title}'
 
     class Meta:
         verbose_name = 'Пост'
@@ -22,7 +22,7 @@ class Category(models.Model):
     name = models.CharField(max_length=128, unique=True, verbose_name='Категория')
 
     def __str__(self):
-        return f'Категория :{self.name}'
+        return f'Категория : {self.name}'
 
     class Meta:
         verbose_name = 'Категория'

@@ -10,6 +10,6 @@ router.register('categories', CategoryViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('register', register),
+    path('register/', register),
     path('login/', obtain_auth_token),
 ]
