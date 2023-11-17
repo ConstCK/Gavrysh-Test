@@ -1,0 +1,28 @@
+@import "./vars";
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    min-width: 95%;
+    font-size: $desktop-font;
+    line-height: 1;
+}
+
+a,
+a:hover,
+a:visited {
+    text-decoration: none;    
+}
+
+button {
+    border: none;
+}

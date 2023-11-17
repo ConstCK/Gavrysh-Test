@@ -3,14 +3,13 @@ const path = require("path");
 
 module.exports = {
   entry: "./src/index.js",
-  output: { filename: "bundle.js",
-            path: path.resolve(__dirname, "dist"),
-            publicPath: "/",
-   },
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+  },
   mode: "development",
-  plugins: [
-    new HtmlWebpackPlugin({ template: "./src/index.html" }),
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
   module: {
     rules: [
       {
@@ -21,8 +20,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.(scss|css)$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

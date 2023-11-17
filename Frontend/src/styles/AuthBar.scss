@@ -1,0 +1,12 @@
+@import "vars";
+
+.auth-bar {
+    @extend %flex;    
+    .user {
+        margin: 0 15px;
+    }
+    @media (max-width: 768px) {
+        display: none;
+        
+    }
+}

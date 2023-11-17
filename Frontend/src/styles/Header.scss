@@ -1,0 +1,9 @@
+@import "vars";
+
+.header {
+    @extend %flex;
+    @extend %border;
+    min-height: 20vh;
+    background-color: $background-color;
+}
+

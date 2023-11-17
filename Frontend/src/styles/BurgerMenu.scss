@@ -1,0 +1,72 @@
+@import "vars";
+
+.burger {
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
+        
+        &.closed {
+            width: 30px;
+            height: 25px;
+            position: relative;
+            margin: 30px 0 30px 30px;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+            cursor: pointer;
+            div {
+                position: absolute;
+                height: 5px;
+                width: 100%;
+                right: 10px;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+                background-color: $main-color;
+                &:nth-child(1) {
+                    top: 0px;  
+                }
+                &:nth-child(2) {
+                    top: 9px;
+                }
+                &:nth-child(3) {
+                    top: 18px;
+                }                    
+
+            }
+            
+        }
+        
+        &.opened {
+            width: 30px;
+            height: 25px;
+            position: relative;
+            margin: 30px 0 30px 30px;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+            cursor: pointer;
+            z-index: 2;
+            div {
+                position: absolute;
+                height: 5px;
+                width: 100%;
+                right: 10px;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+                background-color: $main-color;
+                &:nth-child(1) {
+                    top: 12px;
+                    transform: rotate(135deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                    left: -60px;
+                }
+                &:nth-child(3) {
+                    top: 12px;
+                    transform: rotate(-135deg);
+                }   
+        }          
+
+    }
+    
+    }
+}

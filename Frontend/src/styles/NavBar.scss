@@ -1,0 +1,20 @@
+@import "vars";
+
+.nav-bar {
+    @extend %flex;
+    @media (max-width: 768px) {
+        display: none;        
+    }
+}
+.home-btn {
+    max-width: 40px;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 20px;
+    background-color: $main-color;
+    box-shadow: 2px 4px $shadow-color;
+}
+.home-img {
+    filter: invert(70%) sepia(22%) saturate(5688%) hue-rotate(360deg) brightness(103%) contrast(103%);
+}

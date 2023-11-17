@@ -1,5 +1,5 @@
 const initialState = {
-  isAuth: false,
+  isAuth: true,
 };
 function mainReducer(state = initialState, action) {
   switch (action.type) {
