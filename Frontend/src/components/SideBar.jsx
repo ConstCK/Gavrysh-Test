@@ -29,7 +29,9 @@ const SideBar = () => {
   return (
     <div className="side-bar">
       {!dataLoaded ? (
-        <Loader />
+        <div className="load-bar">
+          <Loader />
+        </div>
       ) : (
         <div className="category-container">
           <MyButton title="Все" eventHandler={handleSort} />

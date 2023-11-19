@@ -5,8 +5,6 @@ import Footer from "../components/Footer.jsx";
 import SideBar from "../components/SideBar.jsx";
 import ContentBar from "../components/ContentBar.jsx";
 
-import store from "../store/store.js";
-
 function MainPage() {
   return (
     <div>

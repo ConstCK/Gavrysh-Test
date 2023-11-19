@@ -2,9 +2,15 @@
 @import "./styles/vars";
 
 
-#root {        
+#root { 
+    @extend %border;       
     padding: 1%;
     font-size: $desktop-font; 
+
+    .page-header {
+        @extend %header;
+        font-size: 32px;
+    }
     
     @media (max-width: 768px) {        
         font-size: $tablet-font;        

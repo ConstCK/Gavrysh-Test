@@ -9,10 +9,6 @@
     justify-content: start;
     min-height: 63vh;
     background-color: $background-color;
-    .auth-header {
-        @extend %header;
-        font-size: 32px;
-    }
     .message {
         @extend %warning;
         font-size: 28px;        

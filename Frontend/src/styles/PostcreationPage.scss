@@ -1,0 +1,7 @@
+@import "vars";
+
+.post-form {
+    @extend %flex;
+    flex-direction: column;
+    align-items: center;
+}

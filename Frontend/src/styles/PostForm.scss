@@ -1,9 +1,10 @@
 @import "vars";
 
-.main {
+.post-form {
     @extend %flex;
-    @extend %border;    
-    align-items: start;
+    @extend %border;
+    flex-direction: column;    
     min-height: 63vh;
     background-color: $background-color;
+
 }

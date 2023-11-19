@@ -1,0 +1,16 @@
+@import "vars";
+.content-bar {
+    width: 70%;
+    min-height: 63vh; 
+    border-left: 0.2px solid black;     
+    .posts-container {
+        @extend %flex;
+        flex-direction: column;   
+        margin: 20px auto;     
+    }
+    .load-bar {
+        @extend %flex;
+        justify-content: center;
+        min-height: 63vh; 
+    }
+}

@@ -5,11 +5,12 @@
     @extend %flex; 
     background-color: $background-color;
     min-height: 12vh; 
-    font-family: "Secondary", Georgia, monospace;   
+    font-family: "Secondary", Georgia, monospace;  
+    .contacts {
+        @extend %flex; 
+        justify-content: space-around;
+        width: 100%;
+        color: $secondary-color;
+    } 
 }
 
-.contacts {
-    @extend %flex; 
-    width: 100%;
-    color: $secondary-color;
-}

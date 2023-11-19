@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../styles/ContentBar.scss";
 import { Link } from "react-router-dom";
 import Loader from "./UI/Loader.jsx";
 import MyButton from "./UI/MyButton.jsx";
@@ -6,14 +7,14 @@ import { getAllPosts } from "../api/dataService";
 import store from "../store/store.js";
 import { SET_POST_LIST } from "../store/actions.js";
 
-const ContentBar = (props) => {
+const ContentBar = () => {
+  const [user, setUser] = useState(localStorage.getItem("user"));
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const [posts, setPosts] = useState(store.getState().postList);
   const [currentCategory, setCurrentCategory] = useState(
     store.getState().currentCategory
   );
   const [dataLoaded, setDataLoaded] = useState(false);
-  const [user, setUser] = useState(localStorage.getItem("user"));
-  const [token, setToken] = useState(localStorage.getItem("token"));
 
   store.subscribe(() => {
     console.log(store.getState());
@@ -45,7 +46,9 @@ const ContentBar = (props) => {
   return (
     <div className="content-bar">
       {!dataLoaded ? (
-        <Loader />
+        <div className="load-bar">
+          <Loader />
+        </div>
       ) : (
         <div className="posts-container">
           {posts.map((element) => {

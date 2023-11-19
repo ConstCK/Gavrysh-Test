@@ -1,10 +1,17 @@
 @import "vars";
 
-.side-bar {
+.side-bar {     
     width: 30%;
-    height: 63vh;    
+    min-height: 63vh; 
+    border-right: 0.2px solid black;      
     .category-container {
         @extend %flex;
         flex-direction: column;
+        margin: 20px auto;               
+    }
+    .load-bar {
+        @extend %flex;
+        justify-content: center;
+        min-height: 63vh;        
     }
 }

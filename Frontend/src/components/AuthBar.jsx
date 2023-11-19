@@ -9,10 +9,8 @@ import BurgerMenu from "./BurgerMenu.jsx";
 
 const AuthBar = () => {
   const navigate = useNavigate();
-  const navigation = useLocation();
   const [isAuth, setIsAuth] = useState(store.getState().isAuth);
   const [user, setUser] = useState(localStorage.getItem("user"));
-  const [currentLocation, setCurrentLocation] = useState(navigation.pathname);
 
   useEffect(() => {
     if (user.length > 0) {
@@ -33,7 +31,7 @@ const AuthBar = () => {
   };
 
   const handleLogIn = () => {
-    navigate("login/");
+    navigate("/login/");
   };
 
   const handleRegistration = () => {
@@ -42,9 +40,9 @@ const AuthBar = () => {
 
   return (
     <>
-      <div className="auth-bar">
+      <div className="auth">
         {isAuth && <div className="user">{user}</div>}
-        {currentLocation == "/" && (
+        {
           <div className="auth-bar">
             {isAuth ? (
               <MyButton title="Выйти" eventHandler={handleLogOut} />
@@ -58,7 +56,7 @@ const AuthBar = () => {
               </div>
             )}
           </div>
-        )}
+        }
       </div>
       <BurgerMenu />
     </>

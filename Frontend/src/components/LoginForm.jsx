@@ -47,7 +47,7 @@ const LoginForm = (props) => {
   };
   return (
     <div className="login-form">
-      <header className="auth-header">{props.title}</header>
+      <header className="page-header">{props.title}</header>
       <div className="message">{errorMessage}</div>
       <MyInput
         label="Логин"
