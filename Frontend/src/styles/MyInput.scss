@@ -1,0 +1,37 @@
+@import "vars";
+
+
+.input {
+    @extend %flex;
+    flex-direction: column;   
+    font-family: "Primary", Georgia, monospace;
+    .input-label {
+        font-size: 28px;
+    }
+    .input-field {
+        width: 60vw;
+        margin: 20px 0 30px;
+        padding: 10px 15px;
+        font-family: "Secondary", Georgia, monospace;
+        font-size: $desktop-font;
+        text-align: center;
+        background-color: $main-color;
+        color: $secondary-color;
+        box-shadow: 2px 4px $shadow-color;
+        border: none;
+        border-radius: 15px;
+        &::placeholder {
+            font-family: "Primary", Georgia, monospace;
+            color: $secondary-color;
+            text-align: center;
+        }
+        @media (max-width: 768px) {        
+            font-size: $tablet-font;        
+        }
+    
+        @media (max-width: 361px) {
+            font-size: $mobile-font;
+        }
+    }
+}
+

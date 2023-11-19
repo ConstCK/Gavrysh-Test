@@ -3,7 +3,11 @@ import "../../styles/MyButton.scss";
 
 const MyButton = (props) => {
   return (
-    <button className="button" onClick={props.eventHandler}>
+    <button
+      className="button"
+      onClick={props.eventHandler}
+      disabled={props.disabled}
+    >
       {props.title}
     </button>
   );

@@ -11,4 +11,5 @@
 .contacts {
     @extend %flex; 
     width: 100%;
+    color: $secondary-color;
 }

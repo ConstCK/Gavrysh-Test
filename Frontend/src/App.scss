@@ -4,5 +4,14 @@
 
 #root {        
     padding: 1%;
+    font-size: $desktop-font; 
+    
+    @media (max-width: 768px) {        
+        font-size: $tablet-font;        
+    }
+
+    @media (max-width: 361px) {
+        font-size: $mobile-font;
+    }
 }
 

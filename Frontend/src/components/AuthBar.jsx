@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/AuthBar.scss";
 import store from "../store/store.js";
+import { LOG_IN } from "../store/actions.js";
+import { LOG_OUT } from "../store/actions.js";
 import MyButton from "./UI/MyButton.jsx";
 import BurgerMenu from "./BurgerMenu.jsx";
-import { LOG_OUT } from "../store/actions.js";
 
 const AuthBar = () => {
   const navigate = useNavigate();
@@ -12,6 +13,16 @@ const AuthBar = () => {
   const [isAuth, setIsAuth] = useState(store.getState().isAuth);
   const [user, setUser] = useState(localStorage.getItem("user"));
   const [currentLocation, setCurrentLocation] = useState(navigation.pathname);
+
+  useEffect(() => {
+    if (user.length > 0) {
+      store.dispatch(LOG_IN);
+      setIsAuth(store.getState().isAuth);
+    } else {
+      store.dispatch(LOG_OUT);
+      setIsAuth(store.getState().isAuth);
+    }
+  }, []);
 
   const handleLogOut = () => {
     localStorage.setItem("user", "");
@@ -31,22 +42,24 @@ const AuthBar = () => {
 
   return (
     <>
-      {isAuth && <div className="user">{user}</div>}
-      {currentLocation == "/" && (
-        <div className="auth-bar">
-          {isAuth ? (
-            <MyButton title="Выйти" eventHandler={handleLogOut} />
-          ) : (
-            <div>
-              <MyButton title="Войти" eventHandler={handleLogIn} />
-              <MyButton
-                title="Зарегистрироваться"
-                eventHandler={handleRegistration}
-              />
-            </div>
-          )}
-        </div>
-      )}
+      <div className="auth-bar">
+        {isAuth && <div className="user">{user}</div>}
+        {currentLocation == "/" && (
+          <div className="auth-bar">
+            {isAuth ? (
+              <MyButton title="Выйти" eventHandler={handleLogOut} />
+            ) : (
+              <div>
+                <MyButton title="Войти" eventHandler={handleLogIn} />
+                <MyButton
+                  title="Регистрация"
+                  eventHandler={handleRegistration}
+                />
+              </div>
+            )}
+          </div>
+        )}
+      </div>
       <BurgerMenu />
     </>
   );

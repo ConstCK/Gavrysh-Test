@@ -5,20 +5,19 @@ import store from "../store/store.js";
 import HomeImg from "../assets/images/home.svg";
 import MyButton from "./UI/MyButton.jsx";
 
-const NavBar = (props) => {
+const NavBar = () => {
   const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(store.getState().isAuth);
-  useEffect(() => {
-    store.subscribe(listenAuthStatus);
-  }, [isAuth]);
 
-  const listenAuthStatus = () => {
+  store.subscribe(() => {
     setIsAuth(store.getState().isAuth);
-  };
+  });
   const createPost = () => {
-    navigate("post-create/");
+    navigate("/post-create/");
   };
-
+  const about = () => {
+    navigate("/about/");
+  };
   const handleHome = () => {
     navigate("/");
   };
@@ -33,7 +32,12 @@ const NavBar = (props) => {
           onClick={handleHome}
         />
       </div>
-      {isAuth && <MyButton title="Создать пост" eventHandler={createPost} />}
+      <MyButton
+        title="Создать пост"
+        eventHandler={createPost}
+        disabled={isAuth ? false : true}
+      />
+      <MyButton title="О сайте" eventHandler={about} />
     </div>
   );
 };

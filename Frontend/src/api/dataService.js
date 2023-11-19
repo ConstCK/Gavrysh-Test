@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  BASE_URL,
   CATEGORIES_URL,
   POSTS_URL,
   LOGIN_URL,

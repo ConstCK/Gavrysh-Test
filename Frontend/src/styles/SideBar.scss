@@ -1,0 +1,10 @@
+@import "vars";
+
+.side-bar {
+    width: 30%;
+    height: 63vh;    
+    .category-container {
+        @extend %flex;
+        flex-direction: column;
+    }
+}

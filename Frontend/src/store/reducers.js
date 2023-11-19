@@ -1,6 +1,9 @@
 const initialState = {
-  isAuth: true,
+  isAuth: false,
+  currentCategory: "Все",
+  postList: [],
 };
+
 function mainReducer(state = initialState, action) {
   switch (action.type) {
     case "logIn": {
@@ -9,6 +12,14 @@ function mainReducer(state = initialState, action) {
     }
     case "logOut": {
       const newState = { ...state, isAuth: action.payload.data };
+      return newState;
+    }
+    case "setCategory": {
+      const newState = { ...state, currentCategory: action.payload.data };
+      return newState;
+    }
+    case "setPostList": {
+      const newState = { ...state, postList: action.payload.data };
       return newState;
     }
     default:

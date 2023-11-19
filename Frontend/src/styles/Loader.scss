@@ -1,0 +1,28 @@
+@import "vars";
+
+.loader {
+    display: inline-block;
+    width: 63px;
+    height: 63px;
+    &:after {
+        content: " ";
+        display: block;
+        width: 36px;
+        height: 36px;
+        margin: 20px;
+        border-radius: 50%;
+        border: 6px solid $main-color;
+        border-color: $main-color transparent $main-color transparent;
+        animation: loader 1.5s linear infinite;
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="contacts">
         <div>г.Сочи</div>
-        <div>+7(967)321-32-91</div>
+        <div>+7(967)123-45-67</div>
       </div>
     </footer>
   );

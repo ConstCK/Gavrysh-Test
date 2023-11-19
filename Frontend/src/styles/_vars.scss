@@ -12,7 +12,7 @@ $main-color: teal;
 $secondary-color: orange;
 $warning-color: red;
 $border-color: rgba(0,0,0,0.6);
-$background-color: rgba(0,0,0,0.3);
+$background-color: rgba(0,0,0,0.6);
 $shadow-color: rgba(0, 128,128,0.6);
 $desktop-font: 18px;
 $tablet-font: 14px;
@@ -21,7 +21,7 @@ $mobile-font: 10px;
 %flex {
     display: flex;    
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 %border {
@@ -29,4 +29,18 @@ $mobile-font: 10px;
     margin: 0 auto;
     border: 0.5px solid $border-color;
     box-shadow: 2px 4px $border-color;
+}
+
+%header {
+  font-family: "Primary", Georgia, monospace;
+  color: $secondary-color;
+  text-align: center; 
+  margin: 20px; 
+}
+
+%warning {  
+    font-family: "Secondary", Georgia, monospace;
+    color: red;
+    text-align: center; 
+    margin: 20px;   
 }

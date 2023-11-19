@@ -1,10 +1,25 @@
 @import "vars";
+.user {
+    @extend %header;
+    font-size: 20px;
+    margin-right: 25px;    
+}
+.burger-menu {
+    display: none;
 
+    @media (max-width: 768px) {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end; 
+        align-items: center;
+        margin-right: 25px;   
+    }  
+}
 .burger {
     display: none;
+           
     @media (max-width: 768px) {
         display: block;
-        
         &.closed {
             width: 30px;
             height: 25px;
@@ -29,10 +44,8 @@
                 }
                 &:nth-child(3) {
                     top: 18px;
-                }                    
-
-            }
-            
+                }
+            }            
         }
         
         &.opened {
@@ -64,9 +77,53 @@
                     top: 12px;
                     transform: rotate(-135deg);
                 }   
-        }          
+            }
+        }    
+    }
+}
 
-    }
+.menu-invisible {
+    display: none;
+}
+
+.menu-visible {
+    @extend %flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 0 auto;
+    left: 5%;
+    top: 21%;
+    min-width: 90%;
+    min-height: 63vh;
+    z-index: 1;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.nav {
+    @extend %flex;
+    flex-direction: column; 
+    a {
+        border: 1px $secondary-color solid;
+        border-radius: 15px;
+        background-color: $main-color;
+        color:$secondary-color;
+        margin: 15px;
+        padding: 10px 20px;
+        min-width: 120px;
+        text-align: center;
+    }  
     
-    }
+
+}
+.nav-item {
+    border: 1px $secondary-color solid;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 10px 20px;
+    min-width: 120px;
+    text-align: center;
+    background-color: $main-color;
+    color:$secondary-color;
+    cursor: pointer;
 }
