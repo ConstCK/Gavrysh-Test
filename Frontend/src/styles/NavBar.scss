@@ -14,6 +14,11 @@
     margin: 15px;
     background-color: $main-color;
     box-shadow: 2px 4px $shadow-color;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        transform: scale(1.02);
+    }
+
 }
 .home-img {
     filter: invert(70%) sepia(22%) saturate(5688%) hue-rotate(360deg) brightness(103%) contrast(103%);

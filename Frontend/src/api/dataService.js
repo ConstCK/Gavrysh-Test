@@ -39,6 +39,22 @@ const getAllCategories = async (token) => {
   }
 };
 
+const deletePost = async (token, id) => {
+  try {
+    const response = await axios({
+      baseURL: BASE_URL,
+      url: `${POSTS_URL}${id}`,
+      method: "delete",
+      headers: {
+        Authorization: "Token " + token,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.log(`Ошибка получения данных: ${error}`);
+  }
+};
+
 const register = async (user, password) => {
   try {
     const response = await axios({
@@ -73,4 +89,4 @@ const login = async (user, password) => {
   }
 };
 
-export { login, register, getAllCategories, getAllPosts };
+export { login, register, getAllCategories, getAllPosts, deletePost };

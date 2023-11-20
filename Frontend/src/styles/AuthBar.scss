@@ -4,7 +4,8 @@
     @media (max-width: 768px) {
         display: none;        
     }
-    .auth-bar {         
+    .auth-bar {  
+        margin: 10px;       
         border: 0.1px $main-color solid; 
         border-radius: 15px; 
         .user {

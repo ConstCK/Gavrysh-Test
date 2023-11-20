@@ -3,7 +3,7 @@ import "../styles/ContentBar.scss";
 import { Link } from "react-router-dom";
 import Loader from "./UI/Loader.jsx";
 import MyButton from "./UI/MyButton.jsx";
-import { getAllPosts } from "../api/dataService";
+import { deletePost, getAllPosts } from "../api/dataService";
 import store from "../store/store.js";
 import { SET_POST_LIST } from "../store/actions.js";
 
@@ -19,6 +19,7 @@ const ContentBar = () => {
   store.subscribe(() => {
     console.log(store.getState());
     setCurrentCategory(store.getState().currentCategory);
+    setPosts(store.getState().postList);
   });
   useEffect(() => {
     getAllPosts(token)
@@ -40,8 +41,17 @@ const ContentBar = () => {
       });
   }, [currentCategory]);
 
-  const handleDelete = () => {
-    console.log("deleted");
+  const handleDelete = (id) => {
+    deletePost(token, id)
+      .then((response) => {
+        let result = posts.filter((element) => {
+          return element.id != id;
+        });
+        store.dispatch(SET_POST_LIST(result));
+      })
+      .catch((error) => {
+        console.log("Ошибка удаления данных");
+      });
   };
   return (
     <div className="content-bar">
@@ -51,12 +61,16 @@ const ContentBar = () => {
         </div>
       ) : (
         <div className="posts-container">
+          <header className="page-header">
+            Список библиотек и фреймворков
+          </header>
+          <div className="category-header">Категория: {currentCategory}</div>
           {posts.map((element) => {
             return (
               <div key={element.id} className="post-item">
-                <header>{element.title}</header>
+                <header className="post-header">{element.title}</header>
                 <div className="post-content">
-                  {element.content.slice(1, 100)}...
+                  {element.content.slice(0, 100)}...
                 </div>
                 <div className="post-managing">
                   <div className="post-link">
@@ -64,7 +78,7 @@ const ContentBar = () => {
                   </div>
                   <MyButton
                     title="Удалить"
-                    eventHandler={handleDelete}
+                    eventHandler={() => handleDelete(element.id)}
                     disabled={user == element.author.username ? false : true}
                   />
                 </div>

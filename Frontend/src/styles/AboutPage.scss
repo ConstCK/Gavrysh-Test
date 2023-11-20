@@ -1,0 +1,11 @@
+@import "vars";
+
+.about-page {
+    @extend %border;    
+    min-height: 63vh;      
+    background-color: $background-color;    
+    font-family: "Secondary", Georgia, monospace;
+    .about-content {
+        padding: 15px;
+    }
+}

@@ -1,9 +1,8 @@
 @import "vars";
 
 .side-bar {     
-    width: 30%;
-    min-height: 63vh; 
-    border-right: 0.2px solid black;      
+    width: 25vw;
+    min-height: 63vh;           
     .category-container {
         @extend %flex;
         flex-direction: column;
