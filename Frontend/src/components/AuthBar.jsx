@@ -45,14 +45,11 @@ const AuthBar = () => {
         {
           <div className="auth-bar">
             {isAuth ? (
-              <MyButton title="Выйти" eventHandler={handleLogOut} />
+              <MyButton title="Выйти" handler={handleLogOut} />
             ) : (
               <div>
-                <MyButton title="Войти" eventHandler={handleLogIn} />
-                <MyButton
-                  title="Регистрация"
-                  eventHandler={handleRegistration}
-                />
+                <MyButton title="Войти" handler={handleLogIn} />
+                <MyButton title="Регистрация" handler={handleRegistration} />
               </div>
             )}
           </div>

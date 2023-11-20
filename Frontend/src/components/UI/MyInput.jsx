@@ -4,11 +4,11 @@ import "../../styles/MyInput.scss";
 const MyInput = (props) => {
   return (
     <div className="input">
-      <label className="input-label" htmlFor="loginField">
+      <label className="input-label" htmlFor="inputField">
         {props.label}
       </label>
       <input
-        name="loginField"
+        name="inputField"
         className="input-field"
         type="text"
         placeholder={props.placeholder}

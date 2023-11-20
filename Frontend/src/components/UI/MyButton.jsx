@@ -5,7 +5,7 @@ const MyButton = (props) => {
   return (
     <button
       className="button"
-      onClick={props.eventHandler}
+      onClick={props.handler}
       disabled={props.disabled}
     >
       {props.title}

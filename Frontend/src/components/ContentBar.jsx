@@ -17,7 +17,6 @@ const ContentBar = () => {
   const [dataLoaded, setDataLoaded] = useState(false);
 
   store.subscribe(() => {
-    console.log(store.getState());
     setCurrentCategory(store.getState().currentCategory);
     setPosts(store.getState().postList);
   });
@@ -70,7 +69,7 @@ const ContentBar = () => {
               <div key={element.id} className="post-item">
                 <header className="post-header">{element.title}</header>
                 <div className="post-content">
-                  {element.content.slice(0, 100)}...
+                  {element.content.slice(0, 150)}...
                 </div>
                 <div className="post-managing">
                   <div className="post-link">
@@ -78,7 +77,7 @@ const ContentBar = () => {
                   </div>
                   <MyButton
                     title="Удалить"
-                    eventHandler={() => handleDelete(element.id)}
+                    handler={() => handleDelete(element.id)}
                     disabled={user == element.author.username ? false : true}
                   />
                 </div>

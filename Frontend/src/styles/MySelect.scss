@@ -1,5 +1,12 @@
 @import "vars";
 
-.select {
-    font-family: "Primary", Georgia, monospace;
+.select {  
+    @extend %interface-element;
+    @media (max-width: 768px) {        
+        font-size: $tablet-font;        
+    }
+
+    @media (max-width: 361px) {
+        font-size: $mobile-font;
+    }
 }

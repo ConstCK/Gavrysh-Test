@@ -34,10 +34,10 @@ const NavBar = () => {
       </div>
       <MyButton
         title="Создать пост"
-        eventHandler={createPost}
+        handler={createPost}
         disabled={isAuth ? false : true}
       />
-      <MyButton title="О сайте" eventHandler={about} />
+      <MyButton title="О сайте" handler={about} />
     </div>
   );
 };

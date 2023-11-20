@@ -55,7 +55,6 @@ const BurgerMenu = () => {
         </nav>
 
         {isAuth ? (
-          // <MyButton title="Выйти" eventHandler={handleLogOut} />
           <div className="nav-item" onClick={handleLogOut}>
             Выйти
           </div>

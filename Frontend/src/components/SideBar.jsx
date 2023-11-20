@@ -34,11 +34,11 @@ const SideBar = () => {
         </div>
       ) : (
         <div className="category-container">
-          <MyButton title="Все" eventHandler={handleSort} />
+          <MyButton title="Все" handler={handleSort} />
           {categories.map((element) => {
             return (
               <div key={element.id}>
-                <MyButton title={element.name} eventHandler={handleSort} />
+                <MyButton title={element.name} handler={handleSort} />
               </div>
             );
           })}

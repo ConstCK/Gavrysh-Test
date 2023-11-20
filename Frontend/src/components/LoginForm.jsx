@@ -62,7 +62,7 @@ const LoginForm = (props) => {
       <MyButton
         title="Отправить"
         disabled={authValidation(currentLogin, currentPassword) ? false : true}
-        eventHandler={formStatus === "LogIn" ? handleLogIn : handleRegistration}
+        handler={formStatus === "LogIn" ? handleLogIn : handleRegistration}
       />
     </div>
   );

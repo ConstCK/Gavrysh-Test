@@ -1,15 +1,15 @@
 @import "vars";
 
-
-.input {
+.area {
     @extend %flex;
     flex-direction: column;   
-    font-family: "Primary", Georgia, monospace;
-    .input-label {
+    font-family: "Primary", Georgia, monospace;    
+    .area-label {
         font-size: 28px;
     }
-    .input-field {
+    .area-field {
         @extend %interface-element;
+        height: 200px;
         &::placeholder {
             font-family: "Primary", Georgia, monospace;
             color: $secondary-color;
@@ -24,4 +24,3 @@
         }
     }
 }
-

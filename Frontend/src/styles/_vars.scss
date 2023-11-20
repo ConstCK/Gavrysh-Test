@@ -44,3 +44,17 @@ $mobile-font: 10px;
     text-align: center; 
     margin: 20px;   
 }
+
+%interface-element {
+  width: 60vw;
+  margin: 20px 0 30px;
+  padding: 10px 15px;
+  font-family: "Secondary", Georgia, monospace;
+  font-size: $desktop-font;
+  text-align: center;
+  background-color: $main-color;
+  color: $secondary-color;
+  box-shadow: 2px 4px $shadow-color;
+  border: none;
+  border-radius: 15px;
+}

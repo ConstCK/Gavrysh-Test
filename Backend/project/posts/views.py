@@ -29,7 +29,17 @@ class PostViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
-        return
+        try:
+            author = User.objects.get(username=request.data['author'])
+            category = Category.objects.get(name=request.data['category'])
+            post = Post(title=request.data['title'],
+                        content=request.data['content'],
+                        author=author,
+                        category=category)
+            post.save()
+        except Exception as e:
+            raise Exception(e)
+        return Response("ok")
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

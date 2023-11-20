@@ -55,6 +55,28 @@ const deletePost = async (token, id) => {
   }
 };
 
+const createPost = async (token, data) => {
+  try {
+    const response = await axios({
+      baseURL: BASE_URL,
+      url: POSTS_URL,
+      method: "post",
+      headers: {
+        Authorization: "Token " + token,
+      },
+      data: {
+        title: data.title,
+        content: data.content,
+        author: data.author,
+        category: data.category,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.log(`Ошибка получения данных: ${error}`);
+  }
+};
+
 const register = async (user, password) => {
   try {
     const response = await axios({
@@ -89,4 +111,11 @@ const login = async (user, password) => {
   }
 };
 
-export { login, register, getAllCategories, getAllPosts, deletePost };
+export {
+  login,
+  register,
+  getAllCategories,
+  getAllPosts,
+  deletePost,
+  createPost,
+};
