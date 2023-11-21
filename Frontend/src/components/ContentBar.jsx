@@ -21,7 +21,7 @@ const ContentBar = () => {
     setPosts(store.getState().postList);
   });
   useEffect(() => {
-    getAllPosts(token)
+    getAllPosts()
       .then((response) => {
         if (currentCategory == "Все") {
           store.dispatch(SET_POST_LIST(response.data));

@@ -12,7 +12,7 @@ const SideBar = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
   useEffect(() => {
-    getAllCategories(token)
+    getAllCategories()
       .then((response) => {
         setCategories(response.data);
         setDataLoaded(true);

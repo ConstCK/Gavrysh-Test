@@ -10,9 +10,6 @@ const Post = () => {
     author: "",
     content: "",
   });
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [author, setAuthor] = useState("");
   useEffect(() => {
     const result = store.getState().postList.filter((element) => {
       return element.id == params.id;

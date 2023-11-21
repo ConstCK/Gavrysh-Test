@@ -7,15 +7,12 @@ import {
   REGISTER_URL,
 } from "../utils/constants";
 
-const getAllPosts = async (token) => {
+const getAllPosts = async () => {
   try {
     const response = await axios({
       baseURL: BASE_URL,
       url: POSTS_URL,
       method: "get",
-      headers: {
-        Authorization: "Token " + token,
-      },
     });
     return response;
   } catch (error) {
@@ -23,15 +20,12 @@ const getAllPosts = async (token) => {
   }
 };
 
-const getAllCategories = async (token) => {
+const getAllCategories = async () => {
   try {
     const response = await axios({
       baseURL: BASE_URL,
       url: CATEGORIES_URL,
       method: "get",
-      headers: {
-        Authorization: "Token " + token,
-      },
     });
     return response;
   } catch (error) {

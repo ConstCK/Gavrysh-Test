@@ -6,6 +6,7 @@ import MyArea from "./UI/MyArea.jsx";
 import MyButton from "./UI/MyButton.jsx";
 import MySelect from "./UI/MySelect.jsx";
 import { getAllCategories, createPost } from "../api/dataService.js";
+import { postValidation } from "../utils/validationService.js";
 
 const PostForm = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const PostForm = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    getAllCategories(token)
+    getAllCategories()
       .then((response) => {
         setAllCategories(response.data);
         setLoaded(true);
@@ -28,6 +29,7 @@ const PostForm = () => {
       });
   }, []);
   const handleCategory = (event) => {
+    console.log(event);
     setCategory(event);
   };
   const handleTitle = (event) => {
@@ -70,7 +72,11 @@ const PostForm = () => {
         placeholder="введите пост..."
         handler={handleContent}
       />
-      <MyButton title="Создать" handler={handlePostCtreation} />
+      <MyButton
+        title="Создать"
+        handler={handlePostCtreation}
+        disabled={postValidation(category, title, content) ? false : true}
+      />
     </div>
   );
 };

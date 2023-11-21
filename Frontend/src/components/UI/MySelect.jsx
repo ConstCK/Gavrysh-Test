@@ -10,7 +10,7 @@ const MySelect = (props) => {
         props.handler(event.target.value);
       }}
     >
-      <option defaultValue={null} className="option">
+      <option className="option" defaultValue={null}>
         {props.title}
       </option>
       {data.map((element) => {

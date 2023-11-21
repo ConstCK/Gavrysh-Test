@@ -4,7 +4,6 @@ import "../styles/BurgerMenu.scss";
 import store from "../store/store.js";
 import { LOG_IN } from "../store/actions.js";
 import { LOG_OUT } from "../store/actions.js";
-import MyButton from "./UI/MyButton.jsx";
 
 const BurgerMenu = () => {
   const [menuStatus, setMenuStatus] = useState(false);
@@ -48,7 +47,7 @@ const BurgerMenu = () => {
       <div className={menuStatus ? "menu-visible" : "menu-invisible"}>
         <nav className="nav">
           <Link to={"/"}>Главная</Link>
-          <Link to={"post-create/"} disabled={isAuth ? false : true}>
+          <Link to={"/post-create/"} disabled={isAuth ? false : true}>
             Создать пост
           </Link>
           <Link to={"/about/"}>О сайте</Link>
