@@ -29,7 +29,6 @@ const PostForm = () => {
       });
   }, []);
   const handleCategory = (event) => {
-    console.log(event);
     setCategory(event);
   };
   const handleTitle = (event) => {

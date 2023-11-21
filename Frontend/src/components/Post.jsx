@@ -14,7 +14,6 @@ const Post = () => {
     const result = store.getState().postList.filter((element) => {
       return element.id == params.id;
     })[0];
-    console.log(result["title"]);
     setData({
       title: result["title"],
       author: result["author"]["username"],

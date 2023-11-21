@@ -1,10 +1,12 @@
 @import "./vars";
 
-*,
-*:before,
-*:after {
+* {
     margin: 0;
     padding: 0;    
+    &::after, ::before {
+        margin: 0;
+        padding: 0;    
+    }
 }
 
 html,
@@ -16,10 +18,11 @@ body {
     overflow-x: hidden;
 }
 
-a,
-a:hover,
-a:visited {
-    text-decoration: none;    
+a{
+    text-decoration: none; 
+    &:hover, :active {
+        text-decoration: none;  
+    }
 }
 
 button {
